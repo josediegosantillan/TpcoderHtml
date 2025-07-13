@@ -1,0 +1,1043 @@
+/* =================================
+   
+   ================================= */
+
+
+/* =================================
+   IMPORTS Y VARIABLES GLOBALES
+   ================================= */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #c7a17a;
+    --background-color: #f9f5f0;
+    --dark-color: #151515;
+    --icon-color:#940707;
+    --titulos-color:rgb(154, 90, 6);
+    --titulos-familia:-webkit-text-stroke: 0.3px rgb(0, 0, 0);
+}
+
+/* =================================
+   , GENERALES
+   ================================= */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+html{
+    /* son 10px */
+    font-size: 62.5%; 
+    font-family: 'Playfair Display', sans-serif;
+}
+
+.whatsapp i{
+    font-size: 4rem;
+    color: rgb(50, 185, 1);
+    text-shadow: 2px 2px 2px #000000;
+    -webkit-text-stroke: 0.3px rgb(0, 0, 0);
+    position: fixed;
+    bottom: 2rem; 
+    right: 2rem; 
+    z-index: 1000;
+}
+
+/* =================================
+   , DEL HEADER
+   ================================= */
+h1{
+    font-family: 'Playfair Display', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menuSuperior{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color:var(--background-color);
+    align-items: center;
+}
+
+.telefono{
+    display: flex;
+    align-items: center;
+    gap:7px;
+}
+
+.telefono i{
+    padding-right: 10px;
+    font-size: 3.6rem;
+    color: rgb(50, 185, 1);
+    text-shadow: 3px 1px 2px #ccc;
+    -webkit-text-stroke: 0.3px rgb(0, 0, 0);
+}
+
+.telefono a i:hover{
+    cursor:pointer;
+    color:  rgba(101, 197, 66, 0.902); 
+}
+
+.titulo{
+    display: flex;
+    align-items: center;
+    color:var(--titulos-color);
+    text-shadow: 3px 3px 2px #ccc;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.titulo i{
+    font-size: 3.5rem;
+    color:rgb(154, 90, 6);
+    text-shadow: 3px 3px 2px #ccc;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    color: var(--icon-color);
+    padding-right: 1rem;
+}
+
+.carrito_User{
+    display: flex;
+    align-items:center ;
+}
+
+.carrito_User i{
+    padding-right: 10px;
+    font-size:22px;
+    color: var(--icon-color);
+    cursor: pointer;
+    text-shadow: 3px 3px 2px #ccc;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.contenido_carrito{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+}
+
+.buscar{
+    border-radius: 12px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 30px;
+}
+
+.buscar input{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    padding: 0 0 0 10px;
+    color: #777;
+}
+
+.btn-search{
+    cursor: pointer;
+    border: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90%;
+    padding: 5px;
+    border-radius: 0 10px 10px 0 ;
+}
+
+.menuInferior{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--primary-color);
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menuBar ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+}
+
+.menuBar ul li{
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+    position:relative;
+}
+
+.menuBar ul li a{
+    text-decoration: none;
+    color:black;
+}
+
+.menuBar ul ::after{
+    content: '';
+    width: 1.5rem;
+    height:1px;
+    background-color: white;
+    position: absolute;
+    bottom: -3px;
+    left:50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: all .1 ease;
+}
+
+.menuBar ul li a:hover::after{
+    opacity: 1;
+}
+
+.menuBar ul li a:hover{
+    cursor: pointer;
+    color: white;
+}
+
+/* submenu */
+.dropdown {
+    float: left;
+    overflow: hidden;
+    cursor: pointer;
+} 
+
+.dropdown-content {
+    display: none;
+    position:fixed;
+    background-color: var(--background-color);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,1);
+    z-index: index 999 ;
+}
+
+.dropdown-content a {
+    float:none;
+    color: var(--titulos-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-color);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* =================================
+   , DEL BANNER
+   ================================= */
+.baner{
+    display: flex;
+    background: linear-gradient(100deg, #000000, #00000020),url(../assets/img/CAFECORAZON.png);
+    height: 54rem;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+}
+
+.contenido-Baner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 4000px;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0px 20px 0px 40px;
+}
+
+.contenido-Baner p{
+    color:var(--primary-color);
+}
+
+.contenido-Baner h2{
+    color: white;
+    font-size: 3.5rem;
+    font-weight:500;
+}
+
+.contenido-Baner a{
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    color: white;
+    margin-top: 25px;
+    background-color: var(--primary-color);
+    max-width:190px;
+    padding: 7px 15px;
+    border-radius: 35px;
+    border: 1.5px solid white;
+    max-height: 40px;
+    transition: all 0.3 ease;
+}
+
+.contenido-Baner a:hover{
+    color:var(--primary-color);
+    background-color: transparent;
+}
+
+/* =================================
+   , DE PRODUCTOS DESTACADOS
+   ================================= */
+.productos_Destacados{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.grilla_Destacados{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin: 0 1rem 0 1rem;
+}
+
+.destacado_Botones{
+    border-radius: 50%;
+    padding: 0.2rem 0.4rem 0 0.4rem;
+    border: 1px solid var(--primary-color);
+    left: 1.2rem;
+    position: absolute;
+    top:1rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    transition: all .3 ease;
+}
+
+.destacado_Botones i::after{
+    content: 'Agregar a Favoritos';
+    font-size: 1rem;
+    background-color: white;
+    width: 6.5rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left:105%;
+    border-radius: 0.5rem;
+    border: 1px solid burlywood;
+    padding: 4px;
+    line-height:1.3rem ;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all .1 ease;
+    opacity: 0;
+    z-index: 1; 
+} 
+
+.destacado_Botones i:hover::after{
+    opacity: 1;
+    background: var(--primary-color);
+}
+
+.destacado_Botones:hover{
+    background-color: var(--primary-color);
+    color:white;
+}
+
+.destado{
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    gap: 2rem;
+}
+
+.contenedor_imagen{
+    position: relative;
+    padding: 0.7rem;
+}
+
+.contenedor_imagen img{
+    width: 100%;
+}
+
+.destacado_Menu_Card{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, min-content);
+    row-gap: 1rem;
+}
+
+.estrellas{
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.destacado_Menu_Card h3{
+    grid-row: 2/3;
+    grid-column:1/-1;
+    font-size: 1.9rem;
+}
+
+.agregar{
+    grid-column: 1/-1;
+    display: flex;
+    width: 15rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem 0 1rem;
+}
+
+.agregar i{
+    font-size: 1.9rem;
+    color:var(--primary-color);
+    border-radius: 50%;
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    transition: all 0.3s ease;
+    position:relative;
+}
+
+.agregar p{
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.agregar i:hover{
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+.agregar i::after{
+    font-size: 1rem;
+    content: 'Comprar';
+    background-color: white;
+    width: 6rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    bottom: 2.8rem;
+    left:85%;
+    border: 1px solid burlywood;
+    padding: 6px 0px 6px 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all .1 ease;
+    opacity: 0;
+}
+
+.agregar i:hover::after{
+    opacity: 1;
+    background: var(--primary-color);
+}
+
+.tituloDestacados{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    color:var(--titulos-color);
+    text-shadow: 3px 3px 2px #a1a1a1;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+/* =================================
+   . DE CAFÉS
+   ================================= */
+.principal_Cafes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.principal_Cafes h2{
+    padding: 1rem 2rem;
+    font-size: 2.8rem;
+    color:var(--titulos-color);
+    text-shadow: 3px 3px 2px #ccc;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.descripcion_cafe{
+    display: flex;
+    flex-direction: column;
+    align-items:normal;
+    max-width: 33rem;;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color:white;
+    padding: 10rem 3rem;
+}
+
+.descripcion_cafe h3{
+    font-size: 3.4rem;
+    color:var(--primary-color);
+    -webkit-text-stroke: 1px rgb(98, 98, 98);
+}
+   
+.descripcion_cafe a{
+    font-size: 1.7rem;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    color: white;
+    margin-top: 25px;
+    background-color: var(--primary-color);
+    max-width:190px;
+    padding: 7px 15px;
+    border-radius: 35px;
+    border: 1.5px solid white;
+    max-height: 40px;
+    transition: all 0.3 ease;
+}
+
+.descripcion_cafe a:hover{
+    color:var(--primary-color);
+    background-color: transparent;
+}
+
+.contenedor_Imagen_Cafe_Irlandes, .contenedor_Imagen_Cafe_Ingles, 
+.contenedor_Imagen_Cafe_Capuchino, .contenedor_Imagen_Cafe_Expreso{
+    display: flex;
+    width: 98vw;  
+    height: 100vh; 
+    background-size: cover;
+    background-repeat: no-repeat;  
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contenedor_Imagen_Cafe_Irlandes{
+    background: linear-gradient(100deg, #000000, #00000020),url(../assets/img/preparando_irlandes.jpg);
+}
+
+.contenedor_Imagen_Cafe_Ingles{
+    background: linear-gradient(100deg, #000000, #00000020),url(../assets/img/gallery2.jpg);
+}
+
+.contenedor_Imagen_Cafe_Capuchino{
+    background: linear-gradient(100deg, #000000, #00000020),url(../assets/img/capuchino-category.jpg);
+}
+
+.contenedor_Imagen_Cafe_Expreso{
+    background: linear-gradient(100deg, #000000, #00000020),url(../assets/img/gallery3.jpg);
+}
+
+/* =================================
+   , DEL BLOG
+   ================================= */
+.blog{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin:0 0.5rem 3rem 0.5rem ;
+    background-color: var(--background-color);
+}
+
+.entradas_blog{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.entrada_blog{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.blog h1{
+    align-self: center;
+    font-size: 3.5rem;
+    color:var(--titulos-color);
+    text-shadow: 3px 3px 2px #a1a1a1;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
+.entrada_imagen img{
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.contenido_blog h3{
+    font-size: 2rem;
+}
+
+.contenido_blog p{
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+
+.fecha{
+    font-weight: 700;
+}
+
+.contiene_btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_leermas{
+    padding: 0.2rem 2rem 0.2rem 2rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: var(--primary-color) ;
+    color: white;
+    display: inline-block;
+    border-radius: 1rem;
+    border:1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn_leermas:hover{
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    border:1px solid black;
+}
+
+/* =================================
+   , DE LA GALERIA
+   ================================= */
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 30rem);
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+
+.galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-img-3{
+    grid-column: 2/4;
+    grid-row: 1/4;
+}
+
+/* =================================
+   , DEL MENU
+   ================================= */
+.banner_menu{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.imagen_menu img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.class_Menu{
+    margin:1rem;
+    padding: 0 11rem 0 11rem;
+}
+
+.seccion h2 {
+    color:var(--titulos-color);
+    border-bottom: 2px solid #333;
+    font-size: 2.1rem;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.item {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.item-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.item-price {
+    float: right;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.extras {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* =================================
+   , DEL FORMULARIO
+   ================================= */
+.formulario_Contacto{
+    background-image: url(../assets/img/Cafe.jpg);
+    background-size: cover;
+}
+
+.form{
+    margin-bottom: 2rem;
+}
+
+.muestra_form{
+    margin: 3rem 0 2rem 2rem;
+    display: inline;
+    font-weight: 700;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+    background-color: var(--primary-color) ;
+    color: white;
+    text-decoration: none;
+}
+
+.muestra_form:hover{
+    background-color: transparent ;
+    color: black;
+    border: 1px solid black;
+} 
+
+.form_Contacto {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    width: 400px; 
+    margin: 5rem auto; 
+}
+
+fieldset{
+    border: none;
+    margin:0 ;
+    padding: 0;
+}
+
+legend {
+    font-size: 1.7rem;
+    font-weight: 900;
+    color: var(--titulos-color);
+    margin-bottom: 15px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.form_Nombre, .form_Apellido, .form_Email, .form_Telefono, .form_cometarios, .form_Enviar, .form_Calificacion {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%; 
+    padding: 1rem;
+    border: 1px solid #eab4b4;
+    border-radius: 0.7rem;
+    font-size: 1.5rem;
+}
+
+select{
+    width: 100%; 
+    padding: 1rem;
+    border: 1px solid #eab4b4;
+    border-radius: 0.7rem;
+    font-size: 2.1rem;
+    color:var(--titulos-color);
+}
+
+textarea{
+    resize: vertical;
+}
+
+#enviar{
+    background-color: var(--primary-color) ;;
+    color: white;
+    padding: 10px 15px;
+    border:1px solid transparent;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 10rem;
+    transition: background-color 0.3s ease;
+}
+
+#enviar:hover {
+    background-color: transparent;
+    color: black;
+    border:1px solid black;
+}
+
+.reset:hover{
+    background-color: transparent;
+    color: black;
+    border:1px solid black;
+}
+
+.reset{
+    background-color: var(--primary-color) ;;
+    color: white;
+    padding: 10px 15px;
+    border:1px solid transparent;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 11rem;
+    transition: background-color 0.3s ease;
+}
+
+.form_Enviar{
+    display: flex;
+    gap: 2rem;
+}
+
+/* =================================
+   , DEL FOOTER
+   ================================= */
+.contenedor_Footer{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+}
+
+.menu_Footer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin: 1rem;
+    padding: 0 2rem;
+}
+
+.menu_Footer p{
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding-bottom: 0.7rem;
+}
+
+.menu_Footer ul{
+    list-style: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.7rem;
+}
+
+.en_Negrita{
+    font-weight:bolder;
+    font-size: 1.4rem;
+}
+
+.informaciom_Li:hover{
+    cursor: pointer;
+    color:white;
+}
+
+.redes div {
+    display: inline;
+    font-size: 2.3rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.redes div:hover{
+    opacity: 1;
+}
+
+.face{
+    color: rgb(0, 0, 255);
+}
+
+.instagram{
+    color:rgb(255, 0, 136)
+}
+
+.youtube{
+    color:rgb(255, 0, 0);
+}
+
+.pinterest{
+    color:rgb(245, 0, 49);
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    margin: 2REM;
+}
+
+.copyright p{
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-bottom: 0.7rem;
+}
+
+.informaciom_Li a {
+    text-decoration: none;
+    color: black;
+}
+
+.informaciom_Li a:hover{
+    color:white;
+}
+
+
+
+
+/* =================================
+   MEDIA QUERIES
+   ================================= */
+
+@media screen and (max-width: 768px) {
+    
+    
+    .menuSuperior {
+        /* flex-direction: column; */
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .titulo h1 {
+        font-size: 2.5rem;
+    }
+    .titulo i{
+    font-size: 1.5em;
+    /* color:rgb(154, 90, 6);
+    text-shadow: 3px 3px 2px #ccc;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    color: var(--icon-color);
+    padding-right: 1rem; */
+
+}
+    .carrito_User {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+.carrito_User i{
+    font-size: 1.7rem;
+    padding: 0;
+}    
+    .menuInferior {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .menuBar{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .menuBar ul {
+        /* flex-direction: column; */
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .buscar {
+        width:fit-content;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .baner {
+        height: 35rem;
+        padding: 1rem;
+    }
+    
+    .contenido-Baner h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    /* Productos de 4 columnas a 1 columna */
+    .grilla_Destacados {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .destado {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    /* Blog de 3 columnas a 1 columna */
+    .entradas_blog {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 0 1rem;
+    }
+    
+    /* Galería de 4 columnas a 1 columna */
+    .galeria {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, 20rem);
+        gap: 0.5rem;
+    }
+    
+    .gallery-img-3 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    /* Footer vertical */
+    .menu_Footer {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .copyright {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        margin: 1rem;
+    }
+    
+    /* WhatsApp más pequeño */
+    .whatsapp i {
+        font-size: 3rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    /* Limitar ancho máximo en pantallas muy grandes */
+    .grilla_Destacados,
+    .entradas_blog {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
