@@ -26,22 +26,19 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-
 body{
-    background-color: var(--background-color);
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     width: 100%;
     flex-wrap: wrap;
     position: relative;
 }
-
 html{
     /* son 10px */
     font-size: 62.5%; 
     font-family: 'Playfair Display', sans-serif;
 }
-
 .whatsapp i{
     font-size: 4rem;
     color: rgb(50, 185, 1);
@@ -456,6 +453,7 @@ dropdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--primary-color);
 }
 
 .principal_Cafes h2{
@@ -523,7 +521,7 @@ dropdown-item {
 .contenedor_Imagen_Cafe_Irlandes, .contenedor_Imagen_Cafe_Ingles, 
 .contenedor_Imagen_Cafe_Capuchino, .contenedor_Imagen_Cafe_Expreso{
     display: flex;
-    width: 100vw;  
+    width: 98vw;  
     height: 100vh; 
     background-size: cover;
     background-repeat: no-repeat;  
@@ -552,6 +550,7 @@ dropdown-item {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding-bottom: 1rem;
 }
 
 .blog h1{
@@ -645,9 +644,12 @@ dropdown-item {
     object-fit: cover;
 }
 
+
+
+
 .class_Menu{
     margin:1rem;
-    padding: 0 11rem 0 11rem;
+    padding: 0 1rem 0 1rem;
 }
 
 .seccion h2 {
@@ -888,13 +890,16 @@ textarea{
 .copyright{
     display: flex;
     justify-content: space-between;
-    margin: 2REM;
+    /* margin: 2REM; */
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    align-items: center;
 }
 
 .copyright p{
     font-size: 1.3rem;
     font-weight: 700;
-    padding-bottom: 0.7rem;
+    padding-left: 1rem;
 }
 
 .informaciom_Li a {
@@ -1036,6 +1041,10 @@ textarea{
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
+    }
+    .class_Menu{
+    margin:1rem;
+    padding: 0 11rem 0 11rem;
     }
 }
 
