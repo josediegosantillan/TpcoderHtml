@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lili Cofee©</title>
     <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/index.css">
     <!-- iconos -->
     <link rel="shortcut icon" href="../assets/img/Caffe-icono.svg" type="image/x-icon">
@@ -25,32 +26,49 @@
                 <i class="fa-solid fa-user" onclick="alert('Usuario')"></i>
                 <i class="fa-solid fa-cart-shopping" onclick="alert('Carrito')"></i>
                 <div class="contenido_carrito">
-                    <span class="texto">Carrito</span>
+                    <!-- <span class="texto">Carrito</span> -->
                     <span class="numero">(0)</span>
                 </div>
             </div>
         </div>
-        <nav class="menuInferior">
-            <div class="menuBar">
-                <ul>
-                    <li><a href="../index.html" title="Ir a la página principal">Inicio</a></li>
-                    <li class="dropdown"><i class="fa fa-caret-down"></i> Café de especialidad
-                        <div class="dropdown-content">
-                            <a href="./cafeirlandes.html" >Café Irish</a>
-                            <a href="./cafeIngles.html">Café Ingles</a>
-                            <a href="./cafeexpreso.html">Expreso</a>
-                        </div>
+        
+        <nav class="navbar navbar-expand-lg" style="background-color: var(--primary-color);">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
                     </li>
-                    <li><a href="./contacto.html">Contacto</a></li>
-                    <li><a href="./menu.html" target="_blank" title="Ver nuestro menú">Menu</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" >
+                        Café de especialidad
+                    </a>
+                    <ul class="dropdown-menu fs-4" >
+                      <li><a class="dropdown-item fw-bold" href="./cafeirlandes.html">Café Irish.....</a></li>
+                      <li><a class="dropdown-item fw-bold" href="./cafeIngles.html">Café Ingles.....</a></li>
+                      <!-- <li><a class="dropdown-item fw-bold" href="./cafecapuchino.html">Capuchino.....</a></li> -->
+                      <li><a class="dropdown-item fw-bold" href="./cafeexpreso.html">Expreso.....</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./menu.html">Menú</a>
+                  </li>
+
+                  <!-- <li class="nav-item">
+                    <a class="nav-link" href="./contacto.html">Contacto</a>
+
+                  </li> -->
                 </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2 fs-5" type="search" placeholder="Buscar">
+                  <button class="btn" type="submit">Buscar</button>
+                </form>
+              </div>
             </div>
-            <form class="buscar">
-                <input type="search" id="texto-Busqueda" name="busqueda" placeholder="Buscar">
-                <button class="btn-search" onclick="alert('No se se encontro: '+busqueda.value)">
-                    <a href="#" title="Buscar"><i class="fa-solid fa-magnifying-glass"></i></a>
-                </button>
-            </form>
         </nav>
     </header>    
     <main>
@@ -76,9 +94,44 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="contenedor_Footer">
+            <div class="menu_Footer">
+                <div class="contacto">
+                    <p>Información de contacto</p>
+                    <ul>
+                        <li> <span class="en_Negrita">Dirección: </span>Monte Alegre 1976. Argentina</li>
+                        <li><span class="en_Negrita">Teléfono: </span>1156738367</li>
+                        <li><span class="en_Negrita">Email: </span>info@lilicafee.cof</li>
+                    </ul>
+                </div>
+                <div class="informacion">
+                    <p>Información</p>
+                    <ul>
+                        <li class="informaciom_Li"><a href="./menu.html"title="Ver el menu">Menu</a></li>
+                        <li class="informaciom_Li" ><a href="./contacto.html" target="_blank">Contacto</a></li>
+                        <li class="informaciom_Li" onclick="alert('Lili Cofee©')">Acerca de....</li>
+                    </ul>
+                </div>
+                <div class="redes">
+                    <p>Seguinos:</p>
+                    <div class="face"><i class="fa-brands fa-facebook" onclick="alert('Facebook')"></i></div>
+                    <div class="instagram"><i class="fa-brands fa-square-instagram" onclick="alert('Instagram')"></i></div>
+                    <div class="youtube"><i class="fa-brands fa-youtube" onclick="alert('Youtube')"></i></div>
+                    <div class="twiter"><i class="fa-brands fa-square-x-twitter" onclick="alert('Twitter')"></i></div>
+                    <div class="pinterest"><i class="fa-brands fa-pinterest" onclick="alert('Pinterest')"></i></div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Lili Cofee©.</p>
+                <img src="./../assets/img/payment.png" alt="medios de pago">
+            </div>
+        </div>
+    </footer>
     <!--whatsapp_Te_sigue  -->
     <div class="whatsapp">
         <a href="https://wa.me/5491132128978?text=%21Hola!%20Quiero%20consultar%20sobre..." target="_blank" title="Abrir WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
